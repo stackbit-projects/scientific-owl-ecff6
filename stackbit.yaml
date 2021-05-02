@@ -6,6 +6,8 @@ publishDir: _site
 dataDir: _data
 pagesDir: ''
 staticDir: static
+pageLayoutKey: layout
+injectLocations: null
 models:
   metadata:
     type: data
@@ -54,13 +56,16 @@ models:
       - name: tags
         type: list
         label: Tags
+        items:
+          type: string
     layout: layouts/home.njk
   page:
     type: page
     label: Page
     description: Generic page layout
     folder: pages
-    exclude: '{home.md,blog.md,contact.md,pages.json}'
+    exclude:
+      - '{home.md,blog.md,contact.md,pages.json}'
     fields:
       - name: title
         type: string
@@ -76,6 +81,8 @@ models:
       - name: tags
         type: list
         label: Tags
+        items:
+          type: string
     layout: layouts/page.njk
   blog:
     type: page
@@ -98,13 +105,16 @@ models:
       - name: tags
         type: list
         label: Tags
+        items:
+          type: string
     layout: layouts/blog.njk
   post:
     type: page
     label: Post
     description: Post layout
     folder: posts
-    exclude: '{posts.json}'
+    exclude:
+      - '{posts.json}'
     fields:
       - name: title
         type: string
@@ -120,6 +130,8 @@ models:
       - name: tags
         type: list
         label: Tags
+        items:
+          type: string
     layout: layouts/post.njk
   contact:
     type: page
@@ -142,6 +154,8 @@ models:
       - name: tags
         type: list
         label: Tags
+        items:
+          type: string
     layout: layouts/contact.njk
   not_found:
     type: page
@@ -162,5 +176,3 @@ models:
         required: true
         hidden: true
     layout: layouts/page.njk
-pageLayoutKey: layout
-injectLocations: null
